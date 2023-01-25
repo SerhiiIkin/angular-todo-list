@@ -1,0 +1,45 @@
+<button class="btn-edit" (click)="onEditBtnClick()">&#9998;</button>
+<dialog class="dialog" [open]="dialog" (click)="this.dialog = false">
+  <div class="dialog__container">
+    <form
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+      class="dialog__body"
+      (click)="$event.stopPropagation()"
+    >
+      <label htmlFor="checkBox">
+        Is done ?:
+        <input id="checkBox" type="checkbox" formControlName="isDone" />
+      </label>
+
+      <label htmlFor="id">
+        № :
+        <textarea
+          id="id"
+          formControlName="Id"
+          class="dialog__textarea"
+        ></textarea>
+      </label>
+      <label htmlFor="description">
+        Description:
+        <textarea
+          rows="5"
+          id="description"
+          formControlName="description"
+          class="dialog__textarea"
+        ></textarea>
+      </label>
+      <button
+        type="submit"
+        [disabled]="!profileForm.valid"
+        class="dialog__btn-save"
+      >
+        Save
+      </button>
+      <button type="button" class="dialog__btn-close" (click)="dialog = false">
+        &times;
+      </button>
+      <app-message [message]="message"></app-message>
+    </form>
+  </div>
+</dialog>

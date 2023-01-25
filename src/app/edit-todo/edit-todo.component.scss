@@ -1,0 +1,58 @@
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  &__body {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__btn-save {
+    background-color: blue;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.2rem;
+  }
+
+
+  &__textarea {
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    width: 100%;
+    margin-top: 0.2rem;
+
+    &:disabled {
+      background: transparent;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+.btn-edit {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}

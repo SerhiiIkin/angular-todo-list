@@ -1,0 +1,25 @@
+.add-todo {
+  position: relative;
+  &__input {
+    margin-right: 1rem;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+  }
+  &__btn {
+    display: block;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+
+    @media (min-width: 1200px) {
+      &:hover:disabled {
+        background-color: initial;
+        color: initial;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
+}

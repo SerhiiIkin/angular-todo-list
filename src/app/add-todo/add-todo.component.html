@@ -1,0 +1,11 @@
+<form
+  class="add-todo container"
+  [formGroup]="profileForm"
+  (ngSubmit)="onSubmit()"
+>
+  <textarea class="add-todo__input" formControlName="description"></textarea>
+  <button class="add-todo__btn" [disabled]="!profileForm.valid" type="submit">
+    Add todo
+  </button>
+  <app-message [message]="message"></app-message>
+</form>

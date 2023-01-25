@@ -1,0 +1,15 @@
+.message {
+  background-color: blue;
+  color: white;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: -3rem;
+  left: -100vw;
+  transition: left 0.3s ease 0s;
+  index: 10;
+}
+.message.active {
+  left: 1rem;
+  transition: left 0.3s ease 0s;
+}

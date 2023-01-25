@@ -1,0 +1,35 @@
+<div class="todo-list container">
+  <div class="todo-list__container" *ngIf="todos.length > 0">
+    <div class="todo-list__header">
+      <span></span>
+      <span>№</span>
+      <span>Id</span>
+      <span>Description</span>
+      <span></span>
+    </div>
+    <div
+      class="todo-list__body {{ todo?.isDone ? 'done' : '' }}"
+      *ngFor="let todo of todos; let i = index"
+    >
+      <input
+        type="checkbox"
+        [checked]="todo?.isDone"
+        (click)="onInputCLick(todo)"
+      />
+      <span> {{ i + 1 }} </span>
+      <span>{{ todo?.id }}</span>
+      <span>{{ todo?.description }}</span>
+      <span class="todo-list__buttons">
+        <app-edit-todo
+          [todoId]="todo?.id"
+          (UpdateTodos)="updateTodos($event)"
+        ></app-edit-todo>
+        <button
+          class="btn-delete"
+          (click)="onDeleteBtnClick(todo?.id)"
+        ></button>
+      </span>
+    </div>
+  </div>
+  <div *ngIf="todos.length <= 0">No todos</div>
+</div>

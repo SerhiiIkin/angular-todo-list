@@ -1,0 +1,70 @@
+.todo-list {
+  &__header,
+  &__body {
+    display: grid;
+    grid-template-columns: auto auto max-content 1fr auto;
+    justify-items: center;
+    margin: 1rem 0;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+  }
+  &__body.done {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 90%;
+      height: 0.1rem;
+      background-color: black;
+      top: 50%;
+      left: 2%;
+    }
+  }
+  &__creating {
+    margin-bottom: 1rem;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.btn-delete {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  color: red;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  &::after,
+  &::before {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    background-color: red;
+  }
+
+  &::after {
+    rotate: 45deg;
+  }
+
+  &::before {
+    rotate: -45deg;
+  }
+
+  @media (min-width: 1200px) {
+    &:hover {
+      &::after,
+      &::before {
+        scale: 1.5;
+        transition: scale 0.3s ease 0s;
+      }
+    }
+  }
+}

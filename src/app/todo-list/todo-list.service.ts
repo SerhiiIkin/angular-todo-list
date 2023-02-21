@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class TodoService {
-  todoURl: string = environment.baseApiUrl;
+  todoURl: string = environment.baseApiUrl + "TodoList";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
